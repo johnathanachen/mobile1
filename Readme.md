@@ -21,10 +21,10 @@ Welcome to iOS1! This class introduces you the basics of iOS development. We wil
 
 ## Projects
 
-- Tip Calculator
-- Mood Tracker
-- Tic Tac Toe
-- Custom Project
+- [Tip Calculator](Project-Tip-Calculator)
+- [Mood Tracker](Project-Mood-Tracker)
+- [Tic Tac Toe](Project-Tic-Tac-Toe)
+- [Custom Project](Custom-Project)
 
 ## Course Schedule
 
@@ -36,29 +36,30 @@ Welcome to iOS1! This class introduces you the basics of iOS development. We wil
 
 - #### Week 2
     - [Optionals](05-Optionals)
-    - [Memory Management in Swift]()
-    - [Intro to XCode & Autolayout](06-Intro-To-XCode-&-Autolayout)
-    - [Intro to Model-View-Controller Architecture in iOS](07-Intro-to-MVC-iOS)
-    - [Project - Tip Calculator]()
+    - [Intro to XCode & Autolayout](07-Intro-To-XCode-&-Autolayout)
+    - [Intro to Model-View-Controller Architecture in iOS](08-Intro-to-MVC-iOS)
+    - [Project - Tip Calculator](Project-Tip-Calculator)
 
 - #### Week 3
-    - [Communication Patterns - Delegates](08-Communication-Patterns-Delegates)
-    - [Communication Patterns - Callbacks](09-Communication-Patterns-Callbacks)
-    - [Communication Patterns - Notifications](10-Communication-Patterns-Notifications)
-    - [Project - Mood Tracker]()
+    - [Communication Patterns - Delegates](09-Communication-Patterns-Delegates)
+    - [Communication Patterns - Callbacks](10-Communication-Patterns-Callbacks)
+    - [Communication Patterns - Notifications](11-Communication-Patterns-Notifications)
+    - [Memory Management in Swift](06-Memory-Management)
+    - [Project - Mood Tracker](Project-Mood-Tracker)
     
 - #### Week 4
     - [Intro to Object Oriented Programming](05-Intro-to-object-oriented-programming)
     - [Object Oriented Programming - Inheritance](06-OOP-Inheritance)
     - [Object Oriented Programming - Encapsulation, Access Control](06-OOP-Encapsulation)
+    - [Project - Tic Tac Toe](Project-Tic-Tac-Toe)
     
 - #### Week 5
     - [Object Oriented Programming - Method Overloading](06-Method-Overloading)
     - [Object Oriented Programming - Polymorphism](06-OOP-Polymorphism)
-    - [Project - Custom Project - Week 5-6](10-Custom-Project)
+    - [Project - Custom Project - Week 5-6](Custom-Project)
     
 - #### Week 6
-    - [Project - Custom Project - Week 5-6](10-Custom-Project)
+    - [Project - Custom Project - Week 5-6](Custom-Project)
     
 ## Evaluations
 
@@ -67,4 +68,3 @@ To pass the course, students will have:
     1. Completed and turned in all challenges.
     2. Demonstrate clear understanding of Swift(variables, constants, functions, control flow, value vs reference types, communication patterns), object oriented & protocol oriented programming, mvc, basic xcode/interface builder.
     
-# mobile1
