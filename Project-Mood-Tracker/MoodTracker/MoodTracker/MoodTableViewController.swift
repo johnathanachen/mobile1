@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import CoreData
+
 
 class MoodTableViewController: UITableViewController {
     
@@ -38,7 +38,7 @@ class MoodTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "moodCell", for: indexPath) as! MoodTableViewCell
         
         cell.nameView?.text = model.friends[indexPath.row]
-        cell.moodView?.text = model.moods[indexPath.row]
+        cell.moodView?.text = "😁"
 
         
         return cell

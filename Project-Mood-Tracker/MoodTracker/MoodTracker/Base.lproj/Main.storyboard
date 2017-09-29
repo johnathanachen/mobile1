@@ -68,6 +68,7 @@
                                 <connections>
                                     <outlet property="moodView" destination="Dcu-B0-3pm" id="mPf-fp-tmE"/>
                                     <outlet property="nameView" destination="PDz-xI-2uG" id="qSY-CH-rxr"/>
+                                    <segue destination="RL3-CZ-Ezx" kind="show" id="TTK-bf-eiz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -124,7 +125,57 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uPM-Ru-Rec" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2357.5999999999999" y="134.48275862068968"/>
+            <point key="canvasLocation" x="2473" y="-322"/>
+        </scene>
+        <!--Mood Type-->
+        <scene sceneID="Yba-UT-nsa">
+            <objects>
+                <tableViewController id="RL3-CZ-Ezx" customClass="MoodTypeTableViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mUd-Vp-tb9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="moodType" id="nB6-PM-A8y" customClass="MoodTypeTableViewCell" customModule="MoodTracker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nB6-PM-A8y" id="k7r-JS-EjZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="34B-gD-YML" userLabel="MoodType">
+                                            <rect key="frame" x="0.0" y="8" width="375" height="27"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <action selector="selectMood:" destination="RL3-CZ-Ezx" eventType="touchUpInside" id="9cE-Mn-yeo"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="34B-gD-YML" secondAttribute="trailing" id="4CO-nY-cIG"/>
+                                        <constraint firstItem="34B-gD-YML" firstAttribute="leading" secondItem="k7r-JS-EjZ" secondAttribute="leading" id="Llv-zY-8hd"/>
+                                        <constraint firstItem="34B-gD-YML" firstAttribute="top" secondItem="k7r-JS-EjZ" secondAttribute="top" constant="8" id="YZN-ft-Fzl"/>
+                                        <constraint firstAttribute="bottom" secondItem="34B-gD-YML" secondAttribute="bottom" constant="8" id="ek3-fr-tO0"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="happyMood" destination="34B-gD-YML" id="OsP-pg-TOa"/>
+                                    <outlet property="moodType" destination="34B-gD-YML" id="cYg-6O-z0F"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RL3-CZ-Ezx" id="2aq-pa-Rl6"/>
+                            <outlet property="delegate" destination="RL3-CZ-Ezx" id="YKv-fS-eiD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Mood Type" id="51w-Gu-i9G"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ng-wD-lpQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2473" y="373"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="u9M-Oy-zuE">
