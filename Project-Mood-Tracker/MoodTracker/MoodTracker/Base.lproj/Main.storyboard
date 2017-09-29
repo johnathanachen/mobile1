@@ -65,6 +65,10 @@
                                         <constraint firstAttribute="bottom" secondItem="zl5-Tp-5yq" secondAttribute="bottom" constant="10" id="ojS-Wa-SVw"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="moodView" destination="Dcu-B0-3pm" id="mPf-fp-tmE"/>
+                                    <outlet property="nameView" destination="PDz-xI-2uG" id="qSY-CH-rxr"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

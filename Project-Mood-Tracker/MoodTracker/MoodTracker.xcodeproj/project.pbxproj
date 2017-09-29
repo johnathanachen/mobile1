@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B8875AEA1F7E21A000305034 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8875AE91F7E21A000305034 /* FriendViewController.swift */; };
 		B8875AEC1F7E236000305034 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8875AEB1F7E236000305034 /* Model.swift */; };
+		B8875AF21F7E2CE600305034 /* MoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8875AF11F7E2CE600305034 /* MoodTableViewCell.swift */; };
 		B88F26651F7D6C2A0089A36F /* MoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F26641F7D6C2A0089A36F /* MoodTableViewController.swift */; };
 		B88F267D1F7D80F60089A36F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B88F267B1F7D80F60089A36F /* Model.xcdatamodeld */; };
 		B88F26801F7D81670089A36F /* Entries+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F267E1F7D81670089A36F /* Entries+CoreDataClass.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		B8875AE91F7E21A000305034 /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
 		B8875AEB1F7E236000305034 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		B8875AF11F7E2CE600305034 /* MoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTableViewCell.swift; sourceTree = "<group>"; };
 		B88F26641F7D6C2A0089A36F /* MoodTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTableViewController.swift; sourceTree = "<group>"; };
 		B88F267C1F7D80F60089A36F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		B88F267E1F7D81670089A36F /* Entries+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entries+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			children = (
 				B89100421F7AFDAF00701628 /* AppDelegate.swift */,
 				B88F26641F7D6C2A0089A36F /* MoodTableViewController.swift */,
+				B8875AF11F7E2CE600305034 /* MoodTableViewCell.swift */,
 				B8875AE91F7E21A000305034 /* FriendViewController.swift */,
 				B8875AEB1F7E236000305034 /* Model.swift */,
 				B89100461F7AFDAF00701628 /* Main.storyboard */,
@@ -164,6 +167,7 @@
 				B8875AEA1F7E21A000305034 /* FriendViewController.swift in Sources */,
 				B88F26651F7D6C2A0089A36F /* MoodTableViewController.swift in Sources */,
 				B88F26811F7D81670089A36F /* Entries+CoreDataProperties.swift in Sources */,
+				B8875AF21F7E2CE600305034 /* MoodTableViewCell.swift in Sources */,
 				B88F267D1F7D80F60089A36F /* Model.xcdatamodeld in Sources */,
 				B89100431F7AFDAF00701628 /* AppDelegate.swift in Sources */,
 				B88F26801F7D81670089A36F /* Entries+CoreDataClass.swift in Sources */,

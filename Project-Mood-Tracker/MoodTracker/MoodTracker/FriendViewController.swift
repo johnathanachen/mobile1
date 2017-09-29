@@ -22,6 +22,7 @@ class FriendViewController: UIViewController {
     @IBAction func doneButton(_ sender: UIBarButtonItem) {
         if textView.text!.characters.count > 0 {
             model.friends.append(textView.text!)
+            model.moods.append(textView.text!)
         }
         navigationController?.popToRootViewController(animated: true)
     }

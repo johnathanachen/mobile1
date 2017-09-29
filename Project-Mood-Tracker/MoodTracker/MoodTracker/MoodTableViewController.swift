@@ -15,18 +15,17 @@ class MoodTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
     }
     
     // MARK: - Properties
-    
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
     }
-
+    
 
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-
         return 1
     }
 
@@ -36,9 +35,11 @@ class MoodTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "moodCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "moodCell", for: indexPath) as! MoodTableViewCell
+        
+        cell.nameView?.text = model.friends[indexPath.row]
+        cell.moodView?.text = model.moods[indexPath.row]
 
-        cell.textLabel?.text = model.friends[indexPath.row]
         
         return cell
     }
