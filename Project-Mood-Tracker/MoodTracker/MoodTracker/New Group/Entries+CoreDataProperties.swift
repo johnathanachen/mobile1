@@ -17,8 +17,8 @@ extension Entries {
         return NSFetchRequest<Entries>(entityName: "Entries")
     }
 
+    @NSManaged public var image: NSData?
     @NSManaged public var name: String?
     @NSManaged public var mood: String?
-    @NSManaged public var image: NSData?
 
 }

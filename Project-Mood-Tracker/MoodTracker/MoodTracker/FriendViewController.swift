@@ -1,5 +1,5 @@
 //
-//  MoodSelectorViewController.swift
+//  FriendViewController.swift
 //  MoodTracker
 //
 //  Created by Johnathan Chen on 9/28/17.
@@ -8,20 +8,23 @@
 
 import UIKit
 
-class MoodSelectorViewController: UIViewController {
+class FriendViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        textView.becomeFirstResponder()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    // MARK: - Outlets
+    @IBOutlet weak var textView: UITextField!
     
-
+    // MARK: - Interactions
+    @IBAction func doneButton(_ sender: UIBarButtonItem) {
+        if textView.text!.characters.count > 0 {
+            model.friends.append(textView.text!)
+        }
+        navigationController?.popToRootViewController(animated: true)
+    }
     /*
     // MARK: - Navigation
 

@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="moodCell" id="s8E-La-xBy">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="moodCell" id="s8E-La-xBy" customClass="MoodTableViewCell" customModule="MoodTracker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s8E-La-xBy" id="bj4-dS-2CL">
@@ -35,7 +35,7 @@
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nak-rk-efN">
                                                             <rect key="frame" x="0.0" y="0.0" width="12" height="23.5"/>
                                                         </imageView>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PDz-xI-2uG">
+                                                        <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PDz-xI-2uG">
                                                             <rect key="frame" x="12" y="0.0" width="82" height="23.5"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -46,7 +46,7 @@
                                                         <constraint firstItem="Nak-rk-efN" firstAttribute="width" secondItem="PDz-xI-2uG" secondAttribute="height" multiplier="1:2" id="fue-ai-29o"/>
                                                     </constraints>
                                                 </stackView>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="😁" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dcu-B0-3pm">
+                                                <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="😁" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dcu-B0-3pm">
                                                     <rect key="frame" x="94" y="0.0" width="248" height="23.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -65,9 +65,6 @@
                                         <constraint firstAttribute="bottom" secondItem="zl5-Tp-5yq" secondAttribute="bottom" constant="10" id="ojS-Wa-SVw"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="tZ3-bQ-0Vu" kind="show" id="7hD-eF-tJF"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -81,6 +78,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="inj-DG-gPJ">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="qgn-Nn-lvO" kind="show" id="vdY-YO-PbV"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
@@ -88,51 +88,39 @@
             </objects>
             <point key="canvasLocation" x="1634" y="134"/>
         </scene>
-        <!--Select Mood-->
-        <scene sceneID="ocX-Ua-vCs">
+        <!--Friend-->
+        <scene sceneID="jHu-TZ-HEY">
             <objects>
-                <viewController id="tZ3-bQ-0Vu" customClass="MoodSelectorViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Aus-wX-jEy" customClass="MoodSelectorUIView" customModule="MoodTracker" customModuleProvider="target">
+                <viewController id="qgn-Nn-lvO" customClass="FriendViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7au-Dd-eUN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="yY8-Nq-QeU">
-                                <rect key="frame" x="54" y="297" width="267" height="72"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="😁" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pys-6k-NeC">
-                                        <rect key="frame" x="0.0" y="0.0" width="69" height="72"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="😑" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bgn-sR-4z0">
-                                        <rect key="frame" x="99" y="0.0" width="69" height="72"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="😡" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dhy-0m-Mpl">
-                                        <rect key="frame" x="198" y="0.0" width="69" height="72"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ewc-hO-9u6">
+                                <rect key="frame" x="114" y="113" width="147" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="yY8-Nq-QeU" firstAttribute="centerX" secondItem="Aus-wX-jEy" secondAttribute="centerX" id="EIj-r8-6aA"/>
-                            <constraint firstItem="yY8-Nq-QeU" firstAttribute="centerY" secondItem="Aus-wX-jEy" secondAttribute="centerY" id="qrz-lf-1QR"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="My1-3g-c2H"/>
+                        <viewLayoutGuide key="safeArea" id="27v-oE-oAR"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Select Mood" id="89m-t0-H5W"/>
+                    <navigationItem key="navigationItem" title="Friend" id="IVU-tE-z8n">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="VQu-Bk-nfc">
+                            <connections>
+                                <action selector="doneButton:" destination="qgn-Nn-lvO" id="ovs-hc-8qO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textView" destination="ewc-hO-9u6" id="dmp-VI-O7G"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WMG-c8-4W1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uPM-Ru-Rec" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2341.5999999999999" y="133.5832083958021"/>
+            <point key="canvasLocation" x="2357.5999999999999" y="134.48275862068968"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="u9M-Oy-zuE">
@@ -154,7 +142,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rH0-99-lWp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="868" y="134"/>
+            <point key="canvasLocation" x="794" y="134"/>
         </scene>
     </scenes>
 </document>
