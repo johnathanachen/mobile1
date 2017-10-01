@@ -9,17 +9,15 @@
 import UIKit
 
 protocol moodDelegate: class {
-    func selectMood(mood: Mood)
+    func selectMood(mood: String)
 }
 
 class MoodTypeTableViewController: UITableViewController {
     
-    var moods: Mood = String
-    var moodTypes = ["😁","😑","😡"]
+    weak var delegate: moodDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     // MARK: - Table view data source
@@ -30,19 +28,40 @@ class MoodTypeTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return moodTypes.count
+        return 3
     }
-
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "moodTypeCell", for: indexPath) as! MoodTypeTableViewCell
         
-        cell.moodType.text = moodTypes[indexPath.row]
+        switch indexPath.row {
+        case 0: cell.moodTypeCell.text = moodSelect.happy.rawValue
+        case 1: cell.moodTypeCell.text = moodSelect.medium.rawValue
+        case 2: cell.moodTypeCell.text = moodSelect.bad.rawValue
+        default: break
+        }
         
         return cell
     }
  
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //var mood = ""
+        
+        switch indexPath.row {
+        case 0: self.delegate?.selectMood(mood: moodSelect.happy.rawValue)
+        case 1: self.delegate?.selectMood(mood: moodSelect.medium.rawValue)
+        case 2: self.delegate?.selectMood(mood: moodSelect.bad.rawValue)
+        default: 
+//            print(moodSelect.bad.r)
+//        delegate?.selectMood(mood: moodSelect.bad.rawValue)
+            print(self.delegate)
+            
+    }
+        
+         navigationController?.popToRootViewController(animated: true)
+}
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

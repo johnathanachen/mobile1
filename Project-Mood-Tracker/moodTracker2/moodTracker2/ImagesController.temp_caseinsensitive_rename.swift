@@ -1,66 +1,51 @@
 //
-//  ListTableViewController.swift
+//  imagesController.swift
 //  moodTracker2
 //
-//  Created by Johnathan Chen on 9/29/17.
+//  Created by Johnathan Chen on 10/1/17.
 //  Copyright © 2017 JCSwifty. All rights reserved.
 //
 
 import UIKit
 
-class ListTableViewController: UITableViewController, moodDelegate {
-    
-    var currentMood = moodSelect.happy.rawValue
-    
-    func selectMood(mood: String) {
-       currentMood = mood
-    }
-    
-    
+class ImagesController: UITableViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tableView.reloadData()
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
-    
-    
+
     // MARK: - Table view data source
+
     override func numberOfSections(in tableView: UITableView) -> Int {
-       
-        return 1
+        // #warning Incomplete implementation, return the number of sections
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return 0
     }
 
-
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! ListCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        cell.listCellView.text = currentMood
+        // Configure the cell...
 
         return cell
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toMoodTypeVC"
-        {
-            let vc = segue.destination as! MoodTypeTableViewController
-            vc.delegate = self
-            print(vc.delegate ?? "nil")
-        }
-    }
- 
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let moodChooserTable = storyboard?.instantiateViewController(withIdentifier: "MoodTypeTableViewController") as! MoodTypeTableViewController
-//        moodChooserTable.delegate = self
-//    }
+    */
 
     /*
     // Override to support conditional editing of the table view.

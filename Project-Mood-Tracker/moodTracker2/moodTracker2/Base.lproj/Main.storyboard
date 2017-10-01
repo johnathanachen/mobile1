@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="listCell" id="xo4-9J-RqT">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="listCell" id="xo4-9J-RqT" customClass="ListCell" customModule="moodTracker2" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xo4-9J-RqT" id="9fg-lQ-WSy">
@@ -39,7 +39,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="yqh-fl-5lV" kind="show" id="dbV-b2-bdE"/>
+                                    <outlet property="listCellView" destination="3wj-3i-5HB" id="sMS-Ro-FuW"/>
+                                    <segue destination="yqh-fl-5lV" kind="show" identifier="toMoodTypeVC" id="dbV-b2-bdE"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -48,7 +49,9 @@
                             <outlet property="delegate" destination="DbP-nM-lla" id="qex-lf-fTz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="VYU-xn-tlf"/>
+                    <navigationItem key="navigationItem" id="VYU-xn-tlf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ajj-1I-MB6"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gxz-sz-o5S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -63,15 +66,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="moodTypeCell" id="IEQ-ce-H4p" customClass="MoodTypeTableViewCell" customModule="moodTracker2" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="moodTypeCell" id="IEQ-ce-H4p" customClass="MoodTypeTableViewCell" customModule="moodTracker2" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IEQ-ce-H4p" id="Frn-9m-Olx">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W1X-Ee-rJq">
-                                            <rect key="frame" x="0.0" y="8" width="375" height="28"/>
+                                            <rect key="frame" x="0.0" y="8" width="342" height="28"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
@@ -85,7 +88,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="moodType" destination="W1X-Ee-rJq" id="gIC-iL-F8h"/>
+                                    <outlet property="moodTypeCell" destination="W1X-Ee-rJq" id="Sxe-6P-7VI"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

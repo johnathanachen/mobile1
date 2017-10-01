@@ -1,25 +1,16 @@
 //
-//  MoodTypeTableViewCell.swift
+//  ListCell.swift
 //  moodTracker2
 //
-//  Created by Johnathan Chen on 9/29/17.
+//  Created by Johnathan Chen on 10/1/17.
 //  Copyright © 2017 JCSwifty. All rights reserved.
 //
 
 import UIKit
 
-enum moodSelect: String {
-    case happy = "😁"
-    case medium = "😑"
-    case bad = "😡"
-}
+class ListCell: UITableViewCell {
 
-class MoodTypeTableViewCell: UITableViewCell {
-
-    // MARK: - Outlets
-    @IBOutlet weak var moodTypeCell: UITextField!
-    
-    
+    @IBOutlet weak var listCellView: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()
