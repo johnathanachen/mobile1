@@ -11,6 +11,7 @@ import UIKit
 class ListCell: UITableViewCell {
 
     @IBOutlet weak var listCellView: UITextField!
+    @IBOutlet weak var nameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

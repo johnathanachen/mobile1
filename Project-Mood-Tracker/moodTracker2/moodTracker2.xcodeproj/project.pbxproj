@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B8785E391F819D7300CD1475 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8785E381F819D7300CD1475 /* ListCell.swift */; };
 		B88246B81F81AFCD00934380 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88246B71F81AFCD00934380 /* Model.swift */; };
-		B88246BC1F81B50D00934380 /* AddFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88246BB1F81B50D00934380 /* AddFriendCell.swift */; };
 		B88246BE1F81B76500934380 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88246BD1F81B76500934380 /* AddFriendViewController.swift */; };
 		B8BD0E9D1F7EBD9800E45EF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BD0E9C1F7EBD9800E45EF9 /* AppDelegate.swift */; };
 		B8BD0EA21F7EBD9800E45EF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8BD0EA01F7EBD9800E45EF9 /* Main.storyboard */; };
@@ -23,7 +22,6 @@
 /* Begin PBXFileReference section */
 		B8785E381F819D7300CD1475 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		B88246B71F81AFCD00934380 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		B88246BB1F81B50D00934380 /* AddFriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendCell.swift; sourceTree = "<group>"; };
 		B88246BD1F81B76500934380 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		B8BD0E991F7EBD9700E45EF9 /* moodTracker2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moodTracker2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8BD0E9C1F7EBD9800E45EF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,7 +67,6 @@
 				B8BD0E9C1F7EBD9800E45EF9 /* AppDelegate.swift */,
 				B8785E381F819D7300CD1475 /* ListCell.swift */,
 				B8BD0EAE1F7EBE0500E45EF9 /* ListTableViewController.swift */,
-				B88246BB1F81B50D00934380 /* AddFriendCell.swift */,
 				B88246BD1F81B76500934380 /* AddFriendViewController.swift */,
 				B8BD0EB21F7ED19E00E45EF9 /* MoodTypeTableViewCell.swift */,
 				B8BD0EB01F7EBEA800E45EF9 /* MoodTypeTableViewController.swift */,
@@ -161,7 +158,6 @@
 				B8785E391F819D7300CD1475 /* ListCell.swift in Sources */,
 				B8BD0EB31F7ED19E00E45EF9 /* MoodTypeTableViewCell.swift in Sources */,
 				B8BD0EB11F7EBEA800E45EF9 /* MoodTypeTableViewController.swift in Sources */,
-				B88246BC1F81B50D00934380 /* AddFriendCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

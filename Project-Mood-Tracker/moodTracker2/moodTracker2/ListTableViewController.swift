@@ -8,9 +8,16 @@
 
 import UIKit
 
-class ListTableViewController: UITableViewController, moodDelegate {
+class ListTableViewController: UITableViewController, moodDelegate, addFriendDelegate {
+    
+
     
     var currentMood = moodSelect.happy.rawValue
+    var friendName = ""
+    
+    func addFriend(name: String) {
+        friendName = name
+    }
     
     func selectMood(mood: String) {
        currentMood = mood
@@ -44,6 +51,7 @@ class ListTableViewController: UITableViewController, moodDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! ListCell
 
         cell.listCellView.text = currentMood
+        cell.nameLabel.text = friendName
 
         return cell
     }
@@ -54,6 +62,12 @@ class ListTableViewController: UITableViewController, moodDelegate {
             let vc = segue.destination as! MoodTypeTableViewController
             vc.delegate = self
             print(vc.delegate ?? "nil")
+        }
+        if segue.identifier == "toAddName"
+        {
+            let addNamevc = segue.destination as! AddFriendViewController
+            addNamevc.delegate = self
+            print(addNamevc.delegate ?? "nil")
         }
     }
  

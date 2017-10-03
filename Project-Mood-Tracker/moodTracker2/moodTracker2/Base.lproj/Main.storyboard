@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,22 +26,37 @@
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" enabled="NO" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="😁" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3wj-3i-5HB">
-                                            <rect key="frame" x="0.0" y="8" width="342" height="27.5"/>
-                                            <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3G8-eH-N05">
+                                            <rect key="frame" x="14" y="7" width="321" height="29.5"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" enabled="NO" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="😁" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3wj-3i-5HB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="29.5" height="29.5"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gbt-BJ-bz9">
+                                                    <rect key="frame" x="29.5" y="0.0" width="291.5" height="29.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3wj-3i-5HB" firstAttribute="width" secondItem="Gbt-BJ-bz9" secondAttribute="height" multiplier="1:1" id="Vub-b1-3wZ"/>
+                                            </constraints>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="3wj-3i-5HB" firstAttribute="leading" secondItem="9fg-lQ-WSy" secondAttribute="leading" id="6GE-Eu-ikw"/>
-                                        <constraint firstAttribute="bottom" secondItem="3wj-3i-5HB" secondAttribute="bottom" constant="8" id="fcD-g6-J2j"/>
-                                        <constraint firstItem="3wj-3i-5HB" firstAttribute="top" secondItem="9fg-lQ-WSy" secondAttribute="top" constant="8" id="u8l-G1-2bd"/>
-                                        <constraint firstAttribute="trailing" secondItem="3wj-3i-5HB" secondAttribute="trailing" id="xZO-tg-Vgy"/>
+                                        <constraint firstAttribute="trailing" secondItem="3G8-eH-N05" secondAttribute="trailing" constant="7" id="QNq-J6-nBW"/>
+                                        <constraint firstItem="3G8-eH-N05" firstAttribute="leading" secondItem="9fg-lQ-WSy" secondAttribute="leading" constant="14" id="ahi-2U-eL6"/>
+                                        <constraint firstAttribute="bottom" secondItem="3G8-eH-N05" secondAttribute="bottom" constant="7" id="ddb-Qc-5lP"/>
+                                        <constraint firstItem="3G8-eH-N05" firstAttribute="top" secondItem="9fg-lQ-WSy" secondAttribute="top" constant="7" id="ltZ-Mi-LIU"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="listCellView" destination="3wj-3i-5HB" id="sMS-Ro-FuW"/>
+                                    <outlet property="nameLabel" destination="Gbt-BJ-bz9" id="an1-Gx-Nls"/>
                                     <segue destination="yqh-fl-5lV" kind="show" identifier="toMoodTypeVC" id="dbV-b2-bdE"/>
                                 </connections>
                             </tableViewCell>
@@ -53,7 +69,7 @@
                     <navigationItem key="navigationItem" id="VYU-xn-tlf">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ajj-1I-MB6">
                             <connections>
-                                <segue destination="xsP-7U-PwI" kind="show" id="qig-lM-4Zt"/>
+                                <segue destination="xsP-7U-PwI" kind="show" identifier="toAddName" id="qig-lM-4Zt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -116,7 +132,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eoa-Fu-6wq">
-                                <rect key="frame" x="7" y="27" width="361" height="640"/>
+                                <rect key="frame" x="7" y="71" width="361" height="596"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -130,17 +146,17 @@
                             <constraint firstItem="Eoa-Fu-6wq" firstAttribute="leading" secondItem="73B-gh-9YJ" secondAttribute="leading" constant="7" id="oSG-Nz-NJ3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="73B-gh-9YJ"/>
-                        <connections>
-                            <outlet property="addNameTextView" destination="Eoa-Fu-6wq" id="fga-7X-exP"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="MQ0-2a-2h2">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="w3D-4A-vBG">
                             <connections>
-                                <segue destination="DbP-nM-lla" kind="show" id="xyo-jf-RxH"/>
+                                <action selector="tapDoneButton:" destination="xsP-7U-PwI" id="2hc-zf-hUz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addNameTextView" destination="Eoa-Fu-6wq" id="Z8v-L7-zya"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mdh-rJ-68N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -165,7 +181,4 @@
             <point key="canvasLocation" x="420" y="131"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="xyo-jf-RxH"/>
-    </inferredMetricsTieBreakers>
 </document>

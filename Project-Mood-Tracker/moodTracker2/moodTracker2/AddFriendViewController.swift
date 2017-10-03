@@ -8,12 +8,25 @@
 
 import UIKit
 
-class AddFriendViewController: UIViewController {
+protocol addFriendDelegate: class {
+    func addFriend(name: String)
+}
 
+class AddFriendViewController: UIViewController {
+    
+    weak var delegate: addFriendDelegate?
+    lazy var inputName = addNameTextView.text
+    
+    @IBOutlet weak var addNameTextView: UITextField!
+    @IBAction func tapDoneButton(_ sender: UIBarButtonItem) {
+        self.delegate?.addFriend(name: inputName!)
+        navigationController?.popToRootViewController(animated: true)
+        print(self.delegate?.addFriend(name: inputName!))
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        addNameTextView.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +35,12 @@ class AddFriendViewController: UIViewController {
     }
     
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
     }
-    */
 
 }

@@ -11,5 +11,6 @@ import Foundation
 let model = Model()
 
 class Model {
-    var data = ["😁", "😑","😡"]
+    var moods = ["😁", "😑","😡"],
+    names = ["John", "Jessica"]
 }
