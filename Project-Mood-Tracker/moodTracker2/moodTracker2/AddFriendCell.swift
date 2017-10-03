@@ -10,10 +10,11 @@ import UIKit
 
 class AddFriendCell: UITableViewCell {
 
+    @IBOutlet weak var addNameTextView: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-      
+        addNameTextView.becomeFirstResponder()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -115,8 +115,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eoa-Fu-6wq">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eoa-Fu-6wq">
+                                <rect key="frame" x="7" y="27" width="361" height="640"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -124,20 +124,27 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="73B-gh-9YJ" firstAttribute="trailing" secondItem="Eoa-Fu-6wq" secondAttribute="trailing" id="0gd-I4-vSy"/>
-                            <constraint firstItem="Eoa-Fu-6wq" firstAttribute="top" secondItem="73B-gh-9YJ" secondAttribute="top" id="YpX-3N-MuF"/>
+                            <constraint firstItem="73B-gh-9YJ" firstAttribute="trailing" secondItem="Eoa-Fu-6wq" secondAttribute="trailing" constant="7" id="0gd-I4-vSy"/>
+                            <constraint firstItem="Eoa-Fu-6wq" firstAttribute="top" secondItem="73B-gh-9YJ" secondAttribute="top" constant="7" id="YpX-3N-MuF"/>
                             <constraint firstItem="73B-gh-9YJ" firstAttribute="bottom" secondItem="Eoa-Fu-6wq" secondAttribute="bottom" id="nAl-Vp-I5O"/>
-                            <constraint firstItem="Eoa-Fu-6wq" firstAttribute="leading" secondItem="73B-gh-9YJ" secondAttribute="leading" id="oSG-Nz-NJ3"/>
+                            <constraint firstItem="Eoa-Fu-6wq" firstAttribute="leading" secondItem="73B-gh-9YJ" secondAttribute="leading" constant="7" id="oSG-Nz-NJ3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="73B-gh-9YJ"/>
+                        <connections>
+                            <outlet property="addNameTextView" destination="Eoa-Fu-6wq" id="fga-7X-exP"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="MQ0-2a-2h2">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="w3D-4A-vBG"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="w3D-4A-vBG">
+                            <connections>
+                                <segue destination="DbP-nM-lla" kind="show" id="xyo-jf-RxH"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mdh-rJ-68N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2129" y="409"/>
+            <point key="canvasLocation" x="2129" y="516"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eIH-9y-031">
@@ -158,4 +165,7 @@
             <point key="canvasLocation" x="420" y="131"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="xyo-jf-RxH"/>
+    </inferredMetricsTieBreakers>
 </document>
