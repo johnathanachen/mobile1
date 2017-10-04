@@ -54,6 +54,7 @@
                                 <connections>
                                     <outlet property="moodLabelView" destination="X3Q-yo-N9j" id="W1N-P7-dVh"/>
                                     <outlet property="nameLabelView" destination="JIv-pK-c9T" id="bUw-PU-Zuv"/>
+                                    <segue destination="yrl-DY-WMi" kind="show" identifier="editMoodSegue" id="KgO-be-ZVk"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -65,7 +66,7 @@
                     <navigationItem key="navigationItem" id="ov1-lB-sX4">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="WaC-KP-1d6">
                             <connections>
-                                <segue destination="isz-8r-MyN" kind="show" id="s3o-gI-Arr"/>
+                                <segue destination="isz-8r-MyN" kind="show" identifier="addFriendSegue" id="s3o-gI-Arr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -83,19 +84,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="85c-jP-r65">
-                                <rect key="frame" x="92" y="122.5" width="190" height="423"/>
+                                <rect key="frame" x="87" y="122.5" width="200" height="423"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="lKP-Ep-BoG">
-                                        <rect key="frame" x="72.5" y="0.0" width="45" height="90.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="90.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JqU-D2-O9u">
-                                                <rect key="frame" x="0.0" y="0.0" width="45" height="20.5"/>
+                                                <rect key="frame" x="77.5" y="0.0" width="45" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zQG-JV-79g">
-                                                <rect key="frame" x="10" y="60.5" width="25" height="30"/>
+                                                <rect key="frame" x="0.0" y="60.5" width="200" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="JvN-JR-kmo"/>
+                                                </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -103,7 +107,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="E8j-5O-zo1">
-                                        <rect key="frame" x="0.0" y="190.5" width="190" height="232.5"/>
+                                        <rect key="frame" x="5" y="190.5" width="190" height="232.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="xZ8-OL-AVJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="190" height="102.5"/>
@@ -120,7 +124,9 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfq-iv-mT4">
                                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="42"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                                <state key="normal" title="😄"/>
+                                                                <state key="normal" title="😄">
+                                                                    <color key="titleShadowColor" red="0.090999999999999998" green="0.69999999999999996" blue="0.54774999999999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="happy:" destination="isz-8r-MyN" eventType="touchUpInside" id="L6f-Fk-Gzy"/>
                                                                 </connections>
@@ -171,6 +177,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="66p-pX-jlY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1288.8" y="104.7976011994003"/>
+        </scene>
+        <!--Mood EditVC-->
+        <scene sceneID="kcE-ad-oi3">
+            <objects>
+                <viewController id="yrl-DY-WMi" customClass="MoodEditVC" customModule="moodtracker3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LHy-vQ-jnZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="qEa-Nl-HQ5">
+                                <rect key="frame" x="92" y="312.5" width="190" height="42"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="816-vL-eMa">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="😄">
+                                            <color key="titleShadowColor" red="0.090999999999999998" green="0.69999999999999996" blue="0.54774999999999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="happy:" destination="isz-8r-MyN" eventType="touchUpInside" id="YmT-Cp-sq2"/>
+                                            <action selector="happyEditButton:" destination="yrl-DY-WMi" eventType="touchUpInside" id="NpV-ad-HBt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mE-h6-mcp">
+                                        <rect key="frame" x="80" y="0.0" width="30" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="😂"/>
+                                        <connections>
+                                            <action selector="funny:" destination="isz-8r-MyN" eventType="touchUpInside" id="uPZ-Ye-xJB"/>
+                                            <action selector="funnyEditButton:" destination="yrl-DY-WMi" eventType="touchUpInside" id="KsJ-tC-pnz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6A-CA-LnH">
+                                        <rect key="frame" x="160" y="0.0" width="30" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="😛"/>
+                                        <connections>
+                                            <action selector="playful:" destination="isz-8r-MyN" eventType="touchUpInside" id="a7D-xO-gCg"/>
+                                            <action selector="playfulEditButton:" destination="yrl-DY-WMi" eventType="touchUpInside" id="X0t-OX-Xch"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qEa-Nl-HQ5" firstAttribute="centerY" secondItem="LHy-vQ-jnZ" secondAttribute="centerY" id="7C7-vY-Wtw"/>
+                            <constraint firstItem="qEa-Nl-HQ5" firstAttribute="centerX" secondItem="LHy-vQ-jnZ" secondAttribute="centerX" id="Wyo-jZ-Cgn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="X9w-KD-iBN"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="55j-C3-bRf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1289" y="899"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CmO-ya-jIN">

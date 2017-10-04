@@ -8,7 +8,27 @@
 
 import UIKit
 
-class ListVC: UITableViewController {
+class ListVC: UITableViewController, addDelegate, moodEditDelegate {
+
+    var moodEdit = ""
+    
+    func addFriend(name: String) {
+        model.names.append(name)
+    }
+    
+    func addMood(mood: String) {
+        model.moods.append(mood)
+    }
+    
+    func editMood(mood: String) {
+        moodEdit = mood
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
+    }
 
     
     override func viewDidLoad() {
@@ -39,25 +59,50 @@ class ListVC: UITableViewController {
     }
 
 
-    /*
+
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+  
 
-    /*
+
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            model.names.remove(at: indexPath.row)
+            model.moods.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        print("before", model.moods)
+        model.moods.remove(at: indexPath.row)
+        print("removed", model.moods)
+        model.moods.insert(moodEdit, at: indexPath.row)
+        print("appended", model.moods)
+        
+    }
+    
+
+ 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addFriendSegue"
+        {
+            let vc = segue.destination as! AddVC
+            vc.delegate = self
+        }
+        if segue.identifier == "editMoodSegue"
+        {
+            let editVC = segue.destination as! MoodEditVC
+            editVC.delegate = self
+        }
+    }
 
     /*
     // Override to support rearranging the table view.

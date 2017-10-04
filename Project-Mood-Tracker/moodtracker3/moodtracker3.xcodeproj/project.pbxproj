@@ -15,6 +15,7 @@
 		B8C4DAD31F84127A006F14BE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C4DAD21F84127A006F14BE /* Model.swift */; };
 		B8C4DAD51F841649006F14BE /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C4DAD41F841649006F14BE /* AddVC.swift */; };
 		B8C4DAD71F841B65006F14BE /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C4DAD61F841B65006F14BE /* ListViewCell.swift */; };
+		B8C4DAD91F84686B006F14BE /* MoodEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C4DAD81F84686B006F14BE /* MoodEditVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B8C4DAD21F84127A006F14BE /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		B8C4DAD41F841649006F14BE /* AddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
 		B8C4DAD61F841B65006F14BE /* ListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
+		B8C4DAD81F84686B006F14BE /* MoodEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEditVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				B8C4DAD01F84121F006F14BE /* ListVC.swift */,
 				B8C4DAD61F841B65006F14BE /* ListViewCell.swift */,
 				B8C4DAD41F841649006F14BE /* AddVC.swift */,
+				B8C4DAD81F84686B006F14BE /* MoodEditVC.swift */,
 				B8C4DAC21F8411ED006F14BE /* Main.storyboard */,
 				B8C4DAC51F8411ED006F14BE /* Assets.xcassets */,
 				B8C4DAC71F8411ED006F14BE /* LaunchScreen.storyboard */,
@@ -148,6 +151,7 @@
 				B8C4DAD51F841649006F14BE /* AddVC.swift in Sources */,
 				B8C4DAD31F84127A006F14BE /* Model.swift in Sources */,
 				B8C4DAD71F841B65006F14BE /* ListViewCell.swift in Sources */,
+				B8C4DAD91F84686B006F14BE /* MoodEditVC.swift in Sources */,
 				B8C4DAD11F84121F006F14BE /* ListVC.swift in Sources */,
 				B8C4DABF1F8411ED006F14BE /* AppDelegate.swift in Sources */,
 			);

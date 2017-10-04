@@ -8,8 +8,15 @@
 
 import UIKit
 
+protocol addDelegate: class {
+    func addFriend(name: String)
+    func addMood(mood: String)
+}
+
 class AddVC: UIViewController {
 
+    weak var delegate: addDelegate?
+    
     var mood = ""
     
     // MARK: - Outlets
@@ -17,21 +24,24 @@ class AddVC: UIViewController {
     
     // MARK: - Actions
     @IBAction func happy(_ sender: UIButton) {
-        var mood = "😄"
+        mood = "😄"
+        sender.isSelected = !sender.isSelected
     }
+
     @IBAction func funny(_ sender: UIButton) {
-        var mood = "😂"
+        mood = "😂"
+        sender.isSelected = !sender.isSelected
     }
     @IBAction func playful(_ sender: UIButton) {
-        var mood = "😛"
+        mood = "😛"
+        sender.isSelected = !sender.isSelected
     }
-    
 
     
     @IBAction func addFriendButton(_ sender: UIButton) {
-        var newName = inputName.text!
-        model.moods.append(newName)
-        model.names.append(mood)
+        delegate?.addFriend(name: inputName.text!)
+        delegate?.addMood(mood: mood)
+        navigationController?.popToRootViewController(animated: true)
     }
     
     
