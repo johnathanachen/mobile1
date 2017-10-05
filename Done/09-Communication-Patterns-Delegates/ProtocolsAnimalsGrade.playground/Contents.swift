@@ -22,10 +22,14 @@ class Students {
         self.studentName = studentName
     }
     
-    func getCourse(addCourse: String) {
-        let course = Courses(courseName: addCourse)
+    func addCourse(add: String) {
+        let course = Courses(courseName: add)
         courseList.append(course.courseName)
-        print(self.studentName, "is students of these courses",courseList)
+//        print(self.studentName, "is students of these courses",courseList)
+    }
+    
+    func printCourses() {
+        print(courseList)
     }
     
 }
@@ -39,22 +43,28 @@ class Courses {
         self.courseName = courseName
     }
     
-    func getStudents(addStudent: String) {
-        let student = Students(studentName: addStudent)
+    func addStudent(add: String) {
+        let student = Students(studentName: add)
         studentList.append(student.studentName)
-        print(studentList, "are in this", courseName, "class")
+//        print(studentList, "are in this", courseName, "class")
+    }
+    
+    func printRoster() {
+        print(studentList)
     }
 }
 
 
 var Johnathan = Students(studentName: "Johnathan")
-Johnathan.getCourse(addCourse: "PHIL")
-Johnathan.getCourse(addCourse: "Mobile")
+Johnathan.addCourse(add: "English")
+Johnathan.addCourse(add: "Math")
+Johnathan.printCourses()
 
 
 var Math = Courses(courseName: "Math")
-Math.getStudents(addStudent: "Johnathan")
-Math.getStudents(addStudent: "Mike")
+Math.addStudent(add: "Johnathan")
+Math.addStudent(add: "Mike")
+Math.printRoster()
 
 
 
