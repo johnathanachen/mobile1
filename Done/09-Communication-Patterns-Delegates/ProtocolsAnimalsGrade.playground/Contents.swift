@@ -55,16 +55,16 @@ class Courses {
 }
 
 
-var Johnathan = Students(studentName: "Johnathan")
-Johnathan.addCourse(add: "English")
-Johnathan.addCourse(add: "Math")
-Johnathan.printCourses()
-
-
-var Math = Courses(courseName: "Math")
-Math.addStudent(add: "Johnathan")
-Math.addStudent(add: "Mike")
-Math.printRoster()
+//var Johnathan = Students(studentName: "Johnathan")
+//Johnathan.addCourse(add: "English")
+//Johnathan.addCourse(add: "Math")
+//Johnathan.printCourses()
+//
+//
+//var Math = Courses(courseName: "Math")
+//Math.addStudent(add: "Johnathan")
+//Math.addStudent(add: "Mike")
+//Math.printRoster()
 
 
 
@@ -80,8 +80,79 @@ Math.printRoster()
  d. Create instance of 3 animals with different species, some can fly, can jump, some can fly and jump
  e. Put them in an array and print out animals than can only fly
  
- 
 */
+
+protocol Fly {
+    func fly()
+}
+
+protocol Jump {
+    func jump()
+}
+
+protocol Animal {
+    var species: String { get set }
+    func eat(food: String)
+}
+
+struct Dog: Animal, Jump {
+    
+    var species: String
+    
+    func eat(food: String){
+        print(food)
+    }
+    
+    func jump() {
+        print("jumped")
+    }
+
+}
+
+struct Bird: Animal, Fly {
+    
+    var species: String
+    
+    func eat(food: String){
+        print(food)
+    }
+    
+    func fly() {
+        print("flew")
+    }
+    
+}
+
+struct Squirrel: Animal, Jump, Fly {
+    
+    var species: String
+    
+    func eat(food: String){
+        print(food)
+    }
+    
+    func fly() {
+        print("flew")
+    }
+    
+    func jump() {
+        print("jumped")
+    }
+    
+}
+
+let dog = Dog(species: "dog")
+let bird = Bird(species: "bird")
+let squirrel = Squirrel(species: "squirrel")
+
+let array_list: [Animal] = [dog, bird, squirrel]
+
+for animal in array_list {
+    if animal is Jump {
+//        print(animal, "jumps")
+    }
+}
+
 
 
 // Delegates Review
