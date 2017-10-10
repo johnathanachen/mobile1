@@ -20,7 +20,7 @@ class ListVC: UITableViewController, addDelegate, moodEditDelegate {
         model.moods.append(mood)
     }
     
-    func editMood(mood: String) {
+    func editMood(mood: String){
         moodEdit = mood
     }
     
@@ -80,6 +80,7 @@ class ListVC: UITableViewController, addDelegate, moodEditDelegate {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         
         print("before", model.moods)
         model.moods.remove(at: indexPath.row)

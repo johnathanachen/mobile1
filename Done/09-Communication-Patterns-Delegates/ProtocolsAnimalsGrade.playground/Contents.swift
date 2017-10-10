@@ -55,16 +55,16 @@ class Courses {
 }
 
 
-//var Johnathan = Students(studentName: "Johnathan")
-//Johnathan.addCourse(add: "English")
-//Johnathan.addCourse(add: "Math")
-//Johnathan.printCourses()
-//
-//
-//var Math = Courses(courseName: "Math")
-//Math.addStudent(add: "Johnathan")
-//Math.addStudent(add: "Mike")
-//Math.printRoster()
+var Johnathan = Students(studentName: "Johnathan")
+Johnathan.addCourse(add: "English")
+Johnathan.addCourse(add: "Math")
+Johnathan.printCourses()
+
+
+var Math = Courses(courseName: "Math")
+Math.addStudent(add: "Johnathan")
+Math.addStudent(add: "Mike")
+Math.printRoster()
 
 
 
