@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol tapDelegate: class {
+    func tappedButton()
+}
+
 class TouchbleView: UIView {
+    
+    weak var delegate: tapDelegate?
 
     let touchGesture = UITapGestureRecognizer()
     
@@ -31,7 +37,8 @@ class TouchbleView: UIView {
     
     // Called when view is tapped
     @objc func handleTap(tap: UITapGestureRecognizer) {
-        print("Tapped")
+    
+        delegate?.tappedButton()
         
     }
 
