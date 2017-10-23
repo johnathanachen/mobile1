@@ -10,7 +10,15 @@ import UIKit
 
 private let reuseIdentifier = "punImage"
 
+protocol punDelegate: class {
+    func sendNewImage(image: String)
+}
+
 class PunCVC: UICollectionViewController {
+    
+    var delegate: punDelegate?
+    
+    var select = ""
     
     let images = ["01","02","03","04","05","06","07"]
     
@@ -38,6 +46,7 @@ class PunCVC: UICollectionViewController {
         return cell
     }
 
+    
     // MARK: UICollectionViewDelegate
 
     /*
@@ -46,13 +55,18 @@ class PunCVC: UICollectionViewController {
         return true
     }
     */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.sendNewImage(image: images[indexPath.row])
+        navigationController?.popToRootViewController(animated: true)
     }
-    */
+   
+    // Uncomment this method to specify if the specified item should be selected
+//    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+//
+//
+//        return true
+//    }
+//
 
     /*
     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item

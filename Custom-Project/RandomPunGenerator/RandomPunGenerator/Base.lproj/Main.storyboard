@@ -70,8 +70,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="U36-02-gah">
-                            <size key="itemSize" width="50" height="50"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="U36-02-gah">
+                            <size key="itemSize" width="125" height="125"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -86,16 +86,19 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GPN-7E-pdv">
                                             <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="125" id="2fA-nU-9Ca"/>
+                                                <constraint firstAttribute="width" constant="125" id="nfL-cv-rmn"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="GPN-7E-pdv" firstAttribute="leading" secondItem="2x3-q3-9jy" secondAttribute="leading" id="FxE-o1-XkW"/>
-                                    <constraint firstItem="GPN-7E-pdv" firstAttribute="top" secondItem="2x3-q3-9jy" secondAttribute="top" id="HNY-ZL-s5f"/>
-                                    <constraint firstAttribute="trailing" secondItem="GPN-7E-pdv" secondAttribute="trailing" id="Ys5-0K-UyK"/>
-                                    <constraint firstAttribute="bottom" secondItem="GPN-7E-pdv" secondAttribute="bottom" id="qnb-Bk-86L"/>
+                                    <constraint firstItem="GPN-7E-pdv" firstAttribute="leading" secondItem="2x3-q3-9jy" secondAttribute="leading" id="EVg-AO-xir"/>
+                                    <constraint firstItem="GPN-7E-pdv" firstAttribute="top" secondItem="2x3-q3-9jy" secondAttribute="top" id="KXX-Zn-2nF"/>
+                                    <constraint firstAttribute="trailing" secondItem="GPN-7E-pdv" secondAttribute="trailing" id="QY1-Vq-vBm"/>
+                                    <constraint firstAttribute="bottom" secondItem="GPN-7E-pdv" secondAttribute="bottom" id="Zag-IR-vsO"/>
                                 </constraints>
-                                <size key="customSize" width="125" height="125"/>
                                 <connections>
                                     <outlet property="imageView" destination="GPN-7E-pdv" id="l7T-rV-NHg"/>
                                 </connections>
