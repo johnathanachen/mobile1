@@ -16,7 +16,7 @@ protocol punDelegate: class {
 
 class PunCVC: UICollectionViewController {
     
-    var delegate: punDelegate?
+    weak var delegate: punDelegate?
     
     var select = ""
     
@@ -56,7 +56,7 @@ class PunCVC: UICollectionViewController {
     }
     */
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.sendNewImage(image: images[indexPath.row])
+        delegate?.sendNewImage(image: "01")
         navigationController?.popToRootViewController(animated: true)
     }
    

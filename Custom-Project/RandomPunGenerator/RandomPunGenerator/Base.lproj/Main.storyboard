@@ -65,7 +65,7 @@
         <!--PunCVC-->
         <scene sceneID="Ihr-Gx-bwW">
             <objects>
-                <collectionViewController id="bZ7-ou-PIi" customClass="PunCVC" customModule="RandomPunGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="collectionStoryboard" id="bZ7-ou-PIi" customClass="PunCVC" customModule="RandomPunGenerator" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Wzl-9L-9eI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
